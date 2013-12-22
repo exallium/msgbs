@@ -28,7 +28,7 @@ typedef struct _CHANNEL {
 Channel* channel_registry[MAX_CHANNELS];
 
 // Set via initialization / freeing of registry
-int registered = TRUE;
+int registered = FALSE;
 
 // Log messages for better readability and debugging
 char* status_messages[11] = {
@@ -50,7 +50,7 @@ Status init_registry() {
     if (registered)
         return REGISTRY_EXISTS;
 
-    registered = 1;
+    registered = TRUE;
     for (int i = 0; i < MAX_CHANNELS; i++) {
         channel_registry[i] = NULL;
     }
