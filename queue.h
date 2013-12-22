@@ -66,7 +66,6 @@ Status free_registry();
  * @returns 
  *      INFO_NULL if the parameter is NULL
  *      REGISTRY_DNE if the registry was not initialized
- *      CHANNEL_NULL if malloc failed to allocate a channel
  *      REGISTRY_FULL if every slot in registry is taken
  *      CHANNEL_REGISTERED if the channel registry succeeds
  */

@@ -78,10 +78,6 @@ Status register_channel(ChannelInfo *info) {
     if (!registered)
         return REGISTRY_DNE;
 
-    Channel *channel = (Channel *) malloc(sizeof(Channel));
-    if (channel == NULL)
-        return CHANNEL_NULL;
-
     int id = -1;
     for (int i = 0; i < MAX_CHANNELS; i++) {
         if (channel_registry[i] == NULL) {
@@ -93,6 +89,7 @@ Status register_channel(ChannelInfo *info) {
     if (id == -1)
         return REGISTRY_FULL;
 
+    Channel *channel = (Channel *) malloc(sizeof(Channel));
     channel->info.id = id;
     channel->info.message_count = 0;
     channel->messages = NULL;
