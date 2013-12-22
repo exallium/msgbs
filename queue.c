@@ -50,11 +50,11 @@ Status init_registry() {
     if (registered)
         return REGISTRY_EXISTS;
 
-    registered = TRUE;
     for (int i = 0; i < MAX_CHANNELS; i++) {
         channel_registry[i] = NULL;
     }
 
+    registered = TRUE;
     return REGISTRY_CREATED;
 }
 
